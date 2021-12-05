@@ -1,6 +1,7 @@
 <script>
-    import supabase from '$lib/db'
-    bind:value={email}
+    import supabase from '$lib/db';
+
+    let email;
 
 async function loginUser() {
     const { error } = await supabase.auth.signIn({
@@ -17,7 +18,7 @@ async function loginUser() {
         <h5 class="card-title">Welcome</h5>
    	 <p class="card-text text-muted">Please log-in to continue...</p>
    	 <form class="form-floating" on:submit|preventDefault={loginUser}>
-            <input class="form-control" type="email" />
+            <input class="form-control" bind:value={email} type="email" />
    		 <label for="floatingInput">Email address</label>
    		 <button type="submit" class="btn btn-dark mt-3">Magic</button>
             
