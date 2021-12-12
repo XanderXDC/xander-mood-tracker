@@ -39,7 +39,7 @@
 				<div class="row">
 					<div class="col">
 						<form class="form-floating">
-							<input type="number" class="form-control" id="dayInput" value="1" min="1" max="31" />
+							<input type="number" class="form-control" id="dayInput" bind:value={day} min="1" max="31" />
 							<label for="dayInput">Day</label>
 						</form>
 					</div>
@@ -49,7 +49,7 @@
 								type="number"
 								class="form-control"
 								id="monthInput"
-								value="1"
+								bind:value={month}
 								min="1"
 								max="12"
                                
@@ -63,7 +63,7 @@
 								type="number"
 								class="form-control"
 								id="yearInput"
-								value="2021"
+								bind:value={year}
 								min="1"
 								max="2021"
                                 
@@ -113,6 +113,7 @@
 							name="moodRadio"
 							id="okay"
 							autocomplete="off"
+							checked
 							on:click={() => {
 								emoji = emojiList.okay;
 								mood = 'Okay';
